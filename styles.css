@@ -1,0 +1,192 @@
+
+/* Jason SunYingjie */
+
+
+/* Change the global font and adjust the line height and spacing */
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to right, #f0f2f5, #ffffff);
+}
+
+header {
+    background-color: #4CAF50; /* Use a green background, but try other colors for different effects */
+    padding: 2rem;
+    text-align: center;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+}
+
+.main-title {
+    font-size: 3em;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between; /* Change the alignment to spread the links */
+    padding: 0 2rem; /* Inside margin adjustment */
+}
+
+.nav-links a {
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffeb3b;
+    transform: scale(1.05);
+}
+
+main {
+    padding: 3rem;
+}
+
+.featured-courses, .new-resources {
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.featured-courses h2, .new-resources h2 {
+    font-size: 2em;
+    color: #4CAF50;
+    margin-bottom: 1.5rem;
+    text-transform: capitalize;
+}
+
+.site-footer {
+    background-color: #333;
+    color: #f5f5f5;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.site-footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23f5f5f5' fill-opacity='0.1'%3E%3Cpath d='M30 56c15.464 0 28-12.536 28-28S45.464 0 30 0 2 12.536 2 28s12.536 28 28 28zm0-54C12.68 2 2 12.68 2 30s10.68 28 28 28 28-10.68 28-28S47.32 2 30 2zm12 32h-4v-4h-4v4h-4v4h4v4h4v-4h4v-4z'/%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.2;
+    z-index: -1;
+}
+
+/* About a particular style of our page */
+#about-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+
+.about-content, .latest-news ul {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 1.5em;
+    position: relative;
+}
+
+.about-content:before, .latest-news ul:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #4CAF50;
+}
+
+.contact-info address {
+    font-style: italic;
+}
+
+.contact-info strong {
+    display: block;
+    margin-bottom: 0.75rem;
+}
+
+/* ADAPTS to small screen */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links li {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Course box layout adjustment */
+.course-boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.course-box {
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.course-box input[type="number"] {
+    width: 60px;
+    margin-right: 10px;
+}
+
+.add-to-cart {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #3e8e41;
+}
+
+/* Shopping Cart Preview style */
+.cart-preview {
+    margin-top: 3rem;
+    padding: 2rem;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.remove-from-cart, .checkout, .clear-cart {
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.remove-from-cart {
+    background-color: #f44336;
+}
+
+.checkout {
+    background-color: #4CAF50;
+}
+
+.clear-cart {
+    background-color: #e7e7e7;
+    color: #666;
+}

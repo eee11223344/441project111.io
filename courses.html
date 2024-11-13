@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - FutureCode IT Institute, Australia</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Function to check if the user is logged in
+        function checkLoginStatus() {
+            // Check if a loggedInUser is stored in localStorage
+            const loggedInUser = localStorage.getItem('loggedInUser');
+
+            // If no loggedInUser is found, the user is not logged in
+            if (!loggedInUser) {
+                // Show an alert and redirect to the login page
+                alert('Please log in first.');
+                window.location.href = 'login.html';
+            }
+        }
+
+        // Function to check if it's the first load and then redirect
+        function checkFirstLoadAndRedirect() {
+            if (!sessionStorage.getItem('firstLoadDone')) {
+                sessionStorage.setItem('firstLoadDone', 'true');
+                window.location.href = "create.html";
+            }
+        }
+
+        // Ensure the script runs as soon as the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            checkFirstLoadAndRedirect();
+            checkLoginStatus();
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="site-header">
+            <h1 class="main-title">FutureCode IT Institute, Australia</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="create.html">Create</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="courses.html">Course</a></li>
+                    <li><a href="projects.html">Project</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <h2>A selection of future coding IT courses</h2>
+    <section class="course-boxes">
+        <!-- 课程盒子代码 -->
+        <div class="course-box">  
+            <h3>Digital Innovation: Full stack development expert</h3>  
+            <p>Price: $90</p>  
+            <p>Quantity: <input type="number" value="1" min="1"></p>  
+            <button class="add-to-cart">Add to cart</button>  
+        </div>  
+        <div class="course-box">  
+            <h3>AI Intelligent Engineer Path</h3>  
+            <p>Price: $140</p>  
+            <p>Quantity: <input type="number" value="1" min="1"></p>  
+            <button class="add-to-cart">Add to cart</button>  
+        </div>
+        <div class="course-box">  
+            <h3>Cloud-Native Architect Development Program</h3>  
+            <p>Price: $200</p>  
+            <p>Quantity: <input type="number" value="1" min="1"></p>  
+            <button class="add-to-cart">Add to cart</button>  
+        </div>
+        <div class="course-box">  
+            <h3>Blockchain technology and smart contract development</h3>  
+            <p>Price: $230</p>  
+            <p>Quantity: <input type="number" value="1" min="1"></p>  
+            <button class="add-to-cart">Add to cart</button>  
+        </div>
+        <div class="course-box">  
+            <h3>Big Data analysis and machine learning applications</h3>  
+            <p>Price: $300</p>  
+            <p>Quantity: <input type="number" value="1" min="1"></p>  
+            <button class="add-to-cart">Add to cart</button>  
+        </div>  
+    </section>
+
+    <h2>FutureCode IT Institute professional training materials series</h2>
+    <section class="course-boxes">
+        <!-- 专业培训材料系列代码 -->
+        <div class="course-box">  
+            <h3>Python Programming Basics and Advancements </h3>  
+            <p>Price: $120</p>  
+            <p>Quantity: <input type="number" value="1" min="1"></p>  
+            <button class="add-to-cart">Add to cart</button>  
+        </div>  
+        <div class="course-box">  
+            <h3>Network Security Manual: Defense and Offensive Defense Drills</h3>  
+            <p>Price: $200</p>  
+            <p>Quantity: <input type="number" value="1" min="1"></p>  
+            <button class="add-to-cart">Add to cart</button>  
+        </div>
+        <div class="course-box">  
+            <h3>Introduction to Database Management System</h3>  
+            <p>Price: $200</p>  
+            <p>Quantity: <input type="number" value="1" min="1"></p>  
+            <button class="add-to-cart">Add to cart</button>  
+        </div>
+        <div class="course-box">  
+            <h3>Web Front-end Development practical Tutorial</h3>  
+            <p>Price: $300</p>  
+            <p>Quantity: <input type="number" value="1" min="1"></p>  
+            <button class="add-to-cart">Add to cart</button>  
+        </div>
+        <div class="course-box">  
+            <h3>Fundamentals of Artificial Intelligence: From Theory to Practice </h3>  
+            <p>Price: $290</p>  
+            <p>Quantity: <input type="number" value="1" min="1"></p>  
+            <button class="add-to-cart">Add to cart</button>  
+        </div>
+        <div class="course-box">  
+            <h3>Cloud Computing and DevOps Practice Guide</h3>  
+            <p>Price: $400</p>  
+            <p>Quantity: <input type="number" value="1" min="1"></p>  
+            <button class="add-to-cart">Add to cart</button>  
+        </div>
+        <div class="course-box">  
+            <h3>Data Visualization Art: Tableau and Power BI in Action</h3>  
+            <p>Price: $450</p>  
+            <p>Quantity: <input type="number" value="1" min="1"></p>  
+            <button class="add-to-cart">Add to cart</button>  
+        </div>
+        <div class="course-box">  
+            <h3>Blockchain and Smart Contract Development Practice</h3>  
+            <p>Price: $500</p>  
+            <p>Quantity: <input type="number" value="1" min="1"></p>  
+            <button class="add-to-cart">Add to cart</button>  
+        </div>
+    </section>
+
+    <section class="cart-preview">
+        <h3>Preview cart</h3>
+        <div id="cart-items"></div>
+        <p id="cart-total">Total prices: $0</p>
+        <button id="clear-cart">Empty cart</button>
+    </section>
+
+    <footer class="site-footer">
+        <p>&copy; Jason@SunYingjie</p>
+        <p>Address:  Australia</p>
+        <p>Telephone Number: 112233</p>
+        <p>Email :11@11.com</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FutureCode IT Institute, Australia</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Add JavaScript to handle the login button click -->
+    <script>
+        // Function to handle login button click
+        function handleLoginClick(event) {
+            // Check if a registration flag exists in sessionStorage
+            if (!sessionStorage.getItem('registrationCompleted')) {
+                alert("Please register before logging in.");
+                window.location.href = "create.html"; // Redirect to registration page
+            } else {
+                // If registered, you can proceed with login logic or simply redirect to login page
+                window.location.href = "login.html";
+            }
+        }
+
+        // Attach event listener to the Login link
+        document.addEventListener('DOMContentLoaded', function() {
+            var loginLink = document.querySelector('nav .nav-links a[href="login.html"]');
+            if (loginLink) {
+                loginLink.removeEventListener('click', handleLoginClick); // Remove any existing listener to avoid duplication
+                loginLink.addEventListener('click', handleLoginClick);
+            }
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="site-header">
+            <h1 class="main-title">FutureCode IT Institute, Australia</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="create.html">Create</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="courses.html">Course</a></li>
+                    <li><a href="projects.html">Project</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    
+    <main>
+        <section class="Premier Programs">
+            <h2>Premier Programs</h2>
+            <h6>1.Coding Foundations Accelerated</h6>
+            <h6>2.Secure Networks: Elite Defense Strategies</h6>
+        </section>
+        
+        <section class="Emerging Study Tracks">
+            <h2>Emerging Study Tracks</h2>
+            <h6>1.Data Realm Mastery</h6>
+            <h6>2.Web Craftsmanship: End-to-End Development</h6>
+        </section>
+
+        <section class="Industry Connect Series">
+            <h2>Industry Connect Series</h2>
+            <h6>1.Tech Innovation Seminar</h6>
+            <h6>2.Career Catalyst Workshops</h6>
+            <h6>3.Project Showcase Platform</h6>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <p>&copy; Jason@SunYingjie</p>
+        <p>Address:  Australia</p>
+        <p>Telephone Number: 112233</p>
+        <p>Email :11@11.com</p>
+    </footer>
+</body>
+</html>
