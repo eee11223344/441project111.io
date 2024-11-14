@@ -11,21 +11,29 @@ document.addEventListener('DOMContentLoaded', function() {
         let storedUsername = localStorage.getItem("username");
         let storedPassword = localStorage.getItem("password");
 
-        if (username === storedUsername && password === storedPassword) {
-            // Login successful, set loggedInUser in localStorage
-            localStorage.setItem('loggedInUser', username);
-            alert('Login successful! You can now view the courses.');
-            window.location.href = 'courses.html'; // Redirect to courses page
+        if (storedUsername && storedPassword) { // Check if there is a stored username and password
+            if (username === storedUsername && password === storedPassword) {
+                // Login successful, set loggedInUser in localStorage
+                localStorage.setItem('loggedInUser', username);
+                alert('Login successful! You can now view the courses.');
+                window.location.href = 'courses.html'; // Redirect to courses page
+            } else {
+                // Login failed, show an alert
+                alert('Invalid username or password. Please try again.');
+            }
         } else {
-            // Login failed, show an alert
-            alert('Invalid username or password. Please try again.');
+            // If no stored username and password, prompt user to register
+            if (confirm('You have not registered an account yet. Do you want to go to the registration page?')) {
+                window.location.href = 'create.html'; // Redirect to the registration page
+            }
         }
     });
 
+    // If the account has been marked as created, clear the mark and show an alert
     if (localStorage.getItem('accountCreated') === 'true') {
-        localStorage.removeItem('accountCreated'); // Clear mark
+        localStorage.removeItem('accountCreated'); // Clear the mark
         alert('Account created successfully! You can now log in.');
     } else {
-        createLink.style.display = 'none'; // Hide the link to create an account
+        createLink.style.display = ''; // Show the create account link
     }
 });
