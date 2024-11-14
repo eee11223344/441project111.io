@@ -1,7 +1,6 @@
 
 /* Jason SunYingjie */
 
-
 /* Change the global font and adjust the line height and spacing */
 body {
     font-family: 'Open Sans', sans-serif;
@@ -9,11 +8,20 @@ body {
     margin: 0;
     padding: 0;
     background-image: linear-gradient(to right, #f0f2f5, #ffffff);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 header {
     background-color: #4CAF50; /* Use a green background, but try other colors for different effects */
-    padding: 2rem;
+    padding: ½rem;
     text-align: center;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
 }
@@ -44,6 +52,7 @@ header {
 }
 
 main {
+    flex: 1;
     padding: 3rem;
 }
 
@@ -56,7 +65,7 @@ main {
 }
 
 .featured-courses h2, .new-resources h2 {
-    font-size: 2em;
+    font-size: ⅔em;
     color: #4CAF50;
     margin-bottom: 1.5rem;
     text-transform: capitalize;
@@ -77,10 +86,12 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23f5f5f5' fill-opacity='0.1'%3E%3Cpath d='M30 56c15.464 0 28-12.536 28-28S45.464 0 30 0 2 12.536 2 28s12.536 28 28 28zm0-54C12.68 2 2 12.68 2 30s10.68 28 28 28 28-10.68 28-28S47.32 2 30 2zm12 32h-4v-4h-4v4h-4v4h4v4h4v-4h4v-4z'/%3E%3C/g%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23f5f5f5' fill-opacity='0.1'%3E%3Cpath d='M30 56c15.464 0 28-12.536 28-28S45.464 0 30 0 2 12.536 2 28s10.68 28 28 28zm0-54C12.68 2 2 12.68 2 30s10.68 28 28 28 28-10.68 28-28S47.32 2 30 2zm12 32h-4v-4h-4v4h-4v4h4v4h4v-4h4v-4z'/%3E%3C/g%3E%3C/svg%3E");
     opacity: 0.2;
     z-index: -1;
 }
+
+
 
 /* About a particular style of our page */
 #about-page {
