@@ -12,8 +12,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const courseBox = this.closest('.course-box');
             // Get the course name from the 'h3' tag inside the '.course-box'
             const courseName = courseBox.querySelector('h3').textContent;
-            // Get the course price by selecting the second 'p' tag inside the '.course-box', removing the text 'Price: $' and converting to float
-            const coursePrice = parseFloat(courseBox.querySelector('p:nth-child(2)').textContent.replace('Price: $', ''));
+            // Get the course price by selecting the 'p' tag with the text 'Price: $' and converting to float
+            const priceElement = Array.from(courseBox.querySelectorAll('p')).find(p => p.textContent.includes('Price: $'));
+            const coursePrice = parseFloat(priceElement.textContent.replace('Price: $', '').trim());
             // Get the quantity input value as an integer
             const courseQuantity = parseInt(courseBox.querySelector('input[type=number]').value);
 
@@ -39,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let total = 0;
         cart.forEach((item, index) => {
             const div = document.createElement('div');
-            div.textContent = `${item.name} x ${item.quantity}: $${item.price * item.quantity}`;
+            div.textContent = `${item.name} x ${item.quantity}: $${(item.price * item.quantity).toFixed(2)}`;
 
             const removeButton = document.createElement('button');
             removeButton.textContent = 'Remove';
